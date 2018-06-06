@@ -13,7 +13,7 @@ class IndexingAppTest
   test("SumNumbers") {
     val in = fileCopy(path("numbers"), tmpPath())
     main(in)
-    (in + ".sum").read should be("55\n")
+    ==((in + ".sum").read, "55\n")
   }
 
   test("outPath exists - error") {
@@ -41,7 +41,7 @@ class IndexingAppTest
       outPath
     )
 
-    outPath.read should be("55\n")
+    ==(outPath.read, "55\n")
   }
 }
 
